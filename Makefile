@@ -1,4 +1,5 @@
-text=Uniquement à but de location, édité le 20 août 2021
+text=Dossier de location
+date=20 août 2021
 
 .PHONY: all
 all: watermark
@@ -6,7 +7,8 @@ all: watermark
 # hint : pour générer une date en français : LC_ALL=fr_FR.utf8 date '+%d %B %Y'
 # hint n°2 : vérifier que la locale fr_FR.utf8 existe bien dans `locale -a`
 watermark.tex: watermark.tex.tpl
-	@cat watermark.tex.tpl | TEXT="${text}" envsubst > watermark.tex
+	@cat watermark.tex.tpl | \
+		TEXT="${text}" DATE="${date}" envsubst > watermark.tex
 
 watermark.pdf: watermark.tex
 	pdflatex watermark.tex
