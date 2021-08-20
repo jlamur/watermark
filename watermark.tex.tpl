@@ -10,9 +10,9 @@
 \newcommand{\watermark}{
 	\tikz[remember picture, overlay]
 	\node [black,opacity=0.15,rotate=45,scale=2.0] at (current page.center) {
-		\watermarktext{
-			${TEXT}
-			\hspace{1pt}
+		\watermarktext{%
+			${TEXT}%
+			\hspace{3pt}%
 		}
 	};
 }
